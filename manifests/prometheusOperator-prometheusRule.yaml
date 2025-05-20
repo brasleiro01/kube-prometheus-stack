@@ -9,7 +9,7 @@ metadata:
     prometheus: k8s
     role: alert-rules
   name: prometheus-operator-rules
-  namespace: monitoring
+  namespace: prometheus-k8s
 spec:
   groups:
   - name: prometheus-operator

@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/part-of: kube-prometheus
     app.kubernetes.io/version: 1.9.1
   name: node-exporter
-  namespace: monitoring
+  namespace: prometheus-k8s
 spec:
   selector:
     matchLabels:
