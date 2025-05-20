@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager-templates
+  namespace: monitoring
+data:
+  discord.tmpl: |-
+    {{ define "discord.default.message" }}
+    🚨 **{{ .CommonLabels.alertname }}** ({{ .CommonLabels.severity | toUpper }})
+    {{ range .Alerts }}
+    • 📍 Namespace: `{{ .Labels.namespace }}`
+    • 📦 Job: `{{ .Labels.job }}`
+    • 📝 {{ .Annotations.summary }}
+    {{ end }}
+    {{ end }}
