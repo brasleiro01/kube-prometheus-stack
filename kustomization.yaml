@@ -8,6 +8,7 @@ resources:
 - ./manifests/alertmanager-secret.yaml
 - ./manifests/alertmanager-service.yaml
 - ./manifests/alertmanager-serviceAccount.yaml
+- ./manifests/alertmanager-ingress.yaml
 - ./manifests/alertmanager-serviceMonitor.yaml
 - ./manifests/alertmanager-templates.yaml
 - ./manifests/blackboxExporter-clusterRole.yaml
@@ -46,6 +47,7 @@ resources:
 - ./manifests/prometheus-networkPolicy.yaml
 - ./manifests/prometheus-podDisruptionBudget.yaml
 - ./manifests/prometheus-prometheus.yaml
+- ./manifests/prometheus-ingress.yaml
 - ./manifests/prometheus-prometheusRule.yaml
 - ./manifests/prometheus-roleBindingConfig.yaml
 - ./manifests/prometheus-roleBindingSpecificNamespaces.yaml
