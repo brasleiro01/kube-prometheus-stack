@@ -6,7 +6,7 @@ metadata:
 type: Opaque
 stringData:
   DISCORD_WEBHOOK: "https://discord.com/api/webhooks/1374109282869710999/PCYyj3vgQpW7YxSxAzhTyvfKpzpz-Rg9KVeVKGTTtTCfuZ-1fZifM4KDM4q0swPSswTg"
-
+  DISCORD_USERNAME: "jerold"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,12 +28,9 @@ spec:
           image: rogerrum/alertmanager-discord
           ports:
             - containerPort: 9094
-          env:
-            - name: DISCORD_WEBHOOK
-              valueFrom:
-                secretKeyRef:
-                  name: discord-webhook-secret
-                  key: DISCORD_WEBHOOK
+          envFrom:
+          - secretRef:
+              name: discord-webhook-secret
 
 ---
 apiVersion: v1
