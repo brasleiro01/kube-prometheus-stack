@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: proxy
-          image: ghcr.io/belak/alertmanager-discord:latest
+          image: docker.io/metalmatze/alertmanager-discord:latest
           ports:
             - containerPort: 9094
           env:
