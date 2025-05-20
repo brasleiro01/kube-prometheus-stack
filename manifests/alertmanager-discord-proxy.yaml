@@ -6,26 +6,26 @@ metadata:
 type: Opaque
 stringData:
   DISCORD_WEBHOOK: "https://discord.com/api/webhooks/1374109282869710999/PCYyj3vgQpW7YxSxAzhTyvfKpzpz-Rg9KVeVKGTTtTCfuZ-1fZifM4KDM4q0swPSswTg"
-  DISCORD_USERNAME: "jerold"
+
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: alertmanager-discord-proxy
+  name: discord-alerts
   namespace: monitoring
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: alertmanager-discord-proxy
+      app: discord-alerts
   template:
     metadata:
       labels:
-        app: alertmanager-discord-proxy
+        app: discord-alerts
     spec:
       containers:
-        - name: proxy
-          image: rogerrum/alertmanager-discord
+        - name: discord-alerts
+          image: benjojo/alertmanager-discord
           ports:
             - containerPort: 9094
           envFrom:
@@ -36,11 +36,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: alertmanager-discord-proxy
+  name: discord-alerts
   namespace: monitoring
 spec:
   selector:
-    app: alertmanager-discord-proxy
+    app: discord-alerts
   ports:
     - name: http
       port: 9094
