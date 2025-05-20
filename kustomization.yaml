@@ -31,8 +31,6 @@ resources:
 - ./manifests/kubernetesControlPlane-prometheusRule.yaml
 - ./manifests/kubernetesControlPlane-serviceMonitorApiserver.yaml
 - ./manifests/kubernetesControlPlane-serviceMonitorCoreDNS.yaml
-- ./manifests/kubernetesControlPlane-serviceMonitorKubeControllerManager.yaml
-- ./manifests/kubernetesControlPlane-serviceMonitorKubeScheduler.yaml
 - ./manifests/kubernetesControlPlane-serviceMonitorKubelet.yaml
 - ./manifests/nodeExporter-clusterRole.yaml
 - ./manifests/nodeExporter-clusterRoleBinding.yaml
